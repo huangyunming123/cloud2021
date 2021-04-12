@@ -7,6 +7,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 @RestController
@@ -19,7 +21,6 @@ public class PaymentController {
 
 //    @RequestBody 添加请求体中的
 @RequestMapping("/create")
-
 public CommonResult create(@RequestBody Payment payment){
     int i = paymentService.create(payment);
     log.info("插入成功！！");
@@ -38,4 +39,17 @@ public CommonResult query(@PathVariable int id){
 }
 
 
+    @RequestMapping("/testAdd")
+    public String addData(Payment payment){
+    try {
+        paymentService.addData(payment);
+    }catch (Exception e){
+        e.printStackTrace();
+    }
+    return "success";
+}
+
+    public static void main(String[] args) {
+        ArrayList<Object> list = new ArrayList<>();
+    }
 }

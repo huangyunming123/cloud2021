@@ -9,4 +9,6 @@ public interface PaymentService {
 
     List<Payment> query(int id);
 
+    int addData(Payment payment);
+
 }

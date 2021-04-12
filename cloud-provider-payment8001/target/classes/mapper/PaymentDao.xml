@@ -3,13 +3,13 @@
 <mapper namespace="com.atguigu.spring.cloud.dao.PaymentDao">
 
 
-    <resultMap id="baseMap" type="com.atguigu.spring.cloud.com.atguigu.spring.cloud.entities.Payment">
+    <resultMap id="baseMap" type="com.atguigu.spring.cloud.entities.Payment">
         <id column="id" property="id" jdbcType="INTEGER"/>
         <result column="serial" property="serial" jdbcType="VARCHAR"/>
     </resultMap>
 
 
-    <insert id="create" parameterType="com.atguigu.spring.cloud.com.atguigu.spring.cloud.entities.Payment" useGeneratedKeys="true" keyProperty="id">
+    <insert id="create" parameterType="com.atguigu.spring.cloud.entities.Payment" useGeneratedKeys="true" keyProperty="id">
     insert into payment(serial)
     values(#{serial})
     </insert>
@@ -18,4 +18,10 @@
     select * from payment
     where id = #{id}
     </select>
+
+    <insert id="add" parameterType="com.atguigu.spring.cloud.entities.Payment" useGeneratedKeys="true" keyProperty="id">
+    insert into payment(serial)
+    values(#{serial})
+    </insert>
+
 </mapper>

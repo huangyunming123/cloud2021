@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: cloud-payment-service02
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: org.gjt.mm.mysql.Driver
+    url: jdbc:mysql://49.233.192.98:3306/test?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: wjt666666.
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.atguigu.spring.cloud.com.atguigu.spring.cloud.entities
+

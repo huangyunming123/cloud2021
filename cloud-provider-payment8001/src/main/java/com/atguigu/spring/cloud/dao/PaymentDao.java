@@ -10,4 +10,8 @@ public interface PaymentDao {
     int create(Payment payment);
 
     List<Payment> query(int id);
+
+    int add(Payment payment);
+
+
 }

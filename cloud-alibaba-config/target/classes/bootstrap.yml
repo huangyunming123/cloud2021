@@ -1,0 +1,21 @@
+spring:
+  profiles:
+    active: test
+  application:
+    name: nacos-config-client
+  cloud:
+    nacos:
+      discovery:
+        enabled: true
+        server-addr: 127.0.0.1:8848 # 把自己註冊到nacos
+      config:
+        server-addr: 127.0.0.1:8848 # 將nacos 作為配置中心  去nacos 讀取配置 以前是去git上讀取
+        file-extension: yml
+        group: TEST_GROUP  # 不写是default 组的
+        namespace: 0b583153-6226-48b2-ac3a-e457d706c4e1
+#        监控的端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
